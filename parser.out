@@ -1,0 +1,856 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    ERROR
+
+Grammar
+
+Rule 0     S' -> statement
+Rule 1     statement -> assignment
+Rule 2     statement -> expression
+Rule 3     assignment -> IDENTIFIER EQUAL expression
+Rule 4     expression -> expression ADD expression
+Rule 5     expression -> expression SUB expression
+Rule 6     expression -> expression MULT expression
+Rule 7     expression -> expression DIV expression
+Rule 8     expression -> SUB expression
+Rule 9     expression -> expression POW expression
+Rule 10    expression -> EXP
+Rule 11    expression -> PI
+Rule 12    expression -> COMMENT
+Rule 13    expression -> LPAREN expression RPAREN
+Rule 14    expression -> SIN LPAREN expression RPAREN
+Rule 15    expression -> COS LPAREN expression RPAREN
+Rule 16    expression -> TAN LPAREN expression RPAREN
+Rule 17    expression -> NUMBER
+Rule 18    expression -> IDENTIFIER
+
+Terminals, with rules where they appear
+
+ADD                  : 4
+COMMENT              : 12
+COS                  : 15
+DIV                  : 7
+EQUAL                : 3
+ERROR                : 
+EXP                  : 10
+IDENTIFIER           : 3 18
+LPAREN               : 13 14 15 16
+MULT                 : 6
+NUMBER               : 17
+PI                   : 11
+POW                  : 9
+RPAREN               : 13 14 15 16
+SIN                  : 14
+SUB                  : 5 8
+TAN                  : 16
+error                : 
+
+Nonterminals, with rules where they appear
+
+assignment           : 1
+expression           : 2 3 4 4 5 5 6 6 7 7 8 9 9 13 14 15 16
+statement            : 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . statement
+    (1) statement -> . assignment
+    (2) statement -> . expression
+    (3) assignment -> . IDENTIFIER EQUAL expression
+    (4) expression -> . expression ADD expression
+    (5) expression -> . expression SUB expression
+    (6) expression -> . expression MULT expression
+    (7) expression -> . expression DIV expression
+    (8) expression -> . SUB expression
+    (9) expression -> . expression POW expression
+    (10) expression -> . EXP
+    (11) expression -> . PI
+    (12) expression -> . COMMENT
+    (13) expression -> . LPAREN expression RPAREN
+    (14) expression -> . SIN LPAREN expression RPAREN
+    (15) expression -> . COS LPAREN expression RPAREN
+    (16) expression -> . TAN LPAREN expression RPAREN
+    (17) expression -> . NUMBER
+    (18) expression -> . IDENTIFIER
+
+    IDENTIFIER      shift and go to state 4
+    SUB             shift and go to state 5
+    EXP             shift and go to state 6
+    PI              shift and go to state 7
+    COMMENT         shift and go to state 8
+    LPAREN          shift and go to state 9
+    SIN             shift and go to state 10
+    COS             shift and go to state 11
+    TAN             shift and go to state 12
+    NUMBER          shift and go to state 13
+
+    statement                      shift and go to state 1
+    assignment                     shift and go to state 2
+    expression                     shift and go to state 3
+
+state 1
+
+    (0) S' -> statement .
+
+
+
+state 2
+
+    (1) statement -> assignment .
+
+    $end            reduce using rule 1 (statement -> assignment .)
+
+
+state 3
+
+    (2) statement -> expression .
+    (4) expression -> expression . ADD expression
+    (5) expression -> expression . SUB expression
+    (6) expression -> expression . MULT expression
+    (7) expression -> expression . DIV expression
+    (9) expression -> expression . POW expression
+
+    $end            reduce using rule 2 (statement -> expression .)
+    ADD             shift and go to state 14
+    SUB             shift and go to state 15
+    MULT            shift and go to state 16
+    DIV             shift and go to state 17
+    POW             shift and go to state 18
+
+
+state 4
+
+    (3) assignment -> IDENTIFIER . EQUAL expression
+    (18) expression -> IDENTIFIER .
+
+    EQUAL           shift and go to state 19
+    ADD             reduce using rule 18 (expression -> IDENTIFIER .)
+    SUB             reduce using rule 18 (expression -> IDENTIFIER .)
+    MULT            reduce using rule 18 (expression -> IDENTIFIER .)
+    DIV             reduce using rule 18 (expression -> IDENTIFIER .)
+    POW             reduce using rule 18 (expression -> IDENTIFIER .)
+    $end            reduce using rule 18 (expression -> IDENTIFIER .)
+
+
+state 5
+
+    (8) expression -> SUB . expression
+    (4) expression -> . expression ADD expression
+    (5) expression -> . expression SUB expression
+    (6) expression -> . expression MULT expression
+    (7) expression -> . expression DIV expression
+    (8) expression -> . SUB expression
+    (9) expression -> . expression POW expression
+    (10) expression -> . EXP
+    (11) expression -> . PI
+    (12) expression -> . COMMENT
+    (13) expression -> . LPAREN expression RPAREN
+    (14) expression -> . SIN LPAREN expression RPAREN
+    (15) expression -> . COS LPAREN expression RPAREN
+    (16) expression -> . TAN LPAREN expression RPAREN
+    (17) expression -> . NUMBER
+    (18) expression -> . IDENTIFIER
+
+    SUB             shift and go to state 5
+    EXP             shift and go to state 6
+    PI              shift and go to state 7
+    COMMENT         shift and go to state 8
+    LPAREN          shift and go to state 9
+    SIN             shift and go to state 10
+    COS             shift and go to state 11
+    TAN             shift and go to state 12
+    NUMBER          shift and go to state 13
+    IDENTIFIER      shift and go to state 21
+
+    expression                     shift and go to state 20
+
+state 6
+
+    (10) expression -> EXP .
+
+    ADD             reduce using rule 10 (expression -> EXP .)
+    SUB             reduce using rule 10 (expression -> EXP .)
+    MULT            reduce using rule 10 (expression -> EXP .)
+    DIV             reduce using rule 10 (expression -> EXP .)
+    POW             reduce using rule 10 (expression -> EXP .)
+    $end            reduce using rule 10 (expression -> EXP .)
+    RPAREN          reduce using rule 10 (expression -> EXP .)
+
+
+state 7
+
+    (11) expression -> PI .
+
+    ADD             reduce using rule 11 (expression -> PI .)
+    SUB             reduce using rule 11 (expression -> PI .)
+    MULT            reduce using rule 11 (expression -> PI .)
+    DIV             reduce using rule 11 (expression -> PI .)
+    POW             reduce using rule 11 (expression -> PI .)
+    $end            reduce using rule 11 (expression -> PI .)
+    RPAREN          reduce using rule 11 (expression -> PI .)
+
+
+state 8
+
+    (12) expression -> COMMENT .
+
+    ADD             reduce using rule 12 (expression -> COMMENT .)
+    SUB             reduce using rule 12 (expression -> COMMENT .)
+    MULT            reduce using rule 12 (expression -> COMMENT .)
+    DIV             reduce using rule 12 (expression -> COMMENT .)
+    POW             reduce using rule 12 (expression -> COMMENT .)
+    $end            reduce using rule 12 (expression -> COMMENT .)
+    RPAREN          reduce using rule 12 (expression -> COMMENT .)
+
+
+state 9
+
+    (13) expression -> LPAREN . expression RPAREN
+    (4) expression -> . expression ADD expression
+    (5) expression -> . expression SUB expression
+    (6) expression -> . expression MULT expression
+    (7) expression -> . expression DIV expression
+    (8) expression -> . SUB expression
+    (9) expression -> . expression POW expression
+    (10) expression -> . EXP
+    (11) expression -> . PI
+    (12) expression -> . COMMENT
+    (13) expression -> . LPAREN expression RPAREN
+    (14) expression -> . SIN LPAREN expression RPAREN
+    (15) expression -> . COS LPAREN expression RPAREN
+    (16) expression -> . TAN LPAREN expression RPAREN
+    (17) expression -> . NUMBER
+    (18) expression -> . IDENTIFIER
+
+    SUB             shift and go to state 5
+    EXP             shift and go to state 6
+    PI              shift and go to state 7
+    COMMENT         shift and go to state 8
+    LPAREN          shift and go to state 9
+    SIN             shift and go to state 10
+    COS             shift and go to state 11
+    TAN             shift and go to state 12
+    NUMBER          shift and go to state 13
+    IDENTIFIER      shift and go to state 21
+
+    expression                     shift and go to state 22
+
+state 10
+
+    (14) expression -> SIN . LPAREN expression RPAREN
+
+    LPAREN          shift and go to state 23
+
+
+state 11
+
+    (15) expression -> COS . LPAREN expression RPAREN
+
+    LPAREN          shift and go to state 24
+
+
+state 12
+
+    (16) expression -> TAN . LPAREN expression RPAREN
+
+    LPAREN          shift and go to state 25
+
+
+state 13
+
+    (17) expression -> NUMBER .
+
+    ADD             reduce using rule 17 (expression -> NUMBER .)
+    SUB             reduce using rule 17 (expression -> NUMBER .)
+    MULT            reduce using rule 17 (expression -> NUMBER .)
+    DIV             reduce using rule 17 (expression -> NUMBER .)
+    POW             reduce using rule 17 (expression -> NUMBER .)
+    $end            reduce using rule 17 (expression -> NUMBER .)
+    RPAREN          reduce using rule 17 (expression -> NUMBER .)
+
+
+state 14
+
+    (4) expression -> expression ADD . expression
+    (4) expression -> . expression ADD expression
+    (5) expression -> . expression SUB expression
+    (6) expression -> . expression MULT expression
+    (7) expression -> . expression DIV expression
+    (8) expression -> . SUB expression
+    (9) expression -> . expression POW expression
+    (10) expression -> . EXP
+    (11) expression -> . PI
+    (12) expression -> . COMMENT
+    (13) expression -> . LPAREN expression RPAREN
+    (14) expression -> . SIN LPAREN expression RPAREN
+    (15) expression -> . COS LPAREN expression RPAREN
+    (16) expression -> . TAN LPAREN expression RPAREN
+    (17) expression -> . NUMBER
+    (18) expression -> . IDENTIFIER
+
+    SUB             shift and go to state 5
+    EXP             shift and go to state 6
+    PI              shift and go to state 7
+    COMMENT         shift and go to state 8
+    LPAREN          shift and go to state 9
+    SIN             shift and go to state 10
+    COS             shift and go to state 11
+    TAN             shift and go to state 12
+    NUMBER          shift and go to state 13
+    IDENTIFIER      shift and go to state 21
+
+    expression                     shift and go to state 26
+
+state 15
+
+    (5) expression -> expression SUB . expression
+    (4) expression -> . expression ADD expression
+    (5) expression -> . expression SUB expression
+    (6) expression -> . expression MULT expression
+    (7) expression -> . expression DIV expression
+    (8) expression -> . SUB expression
+    (9) expression -> . expression POW expression
+    (10) expression -> . EXP
+    (11) expression -> . PI
+    (12) expression -> . COMMENT
+    (13) expression -> . LPAREN expression RPAREN
+    (14) expression -> . SIN LPAREN expression RPAREN
+    (15) expression -> . COS LPAREN expression RPAREN
+    (16) expression -> . TAN LPAREN expression RPAREN
+    (17) expression -> . NUMBER
+    (18) expression -> . IDENTIFIER
+
+    SUB             shift and go to state 5
+    EXP             shift and go to state 6
+    PI              shift and go to state 7
+    COMMENT         shift and go to state 8
+    LPAREN          shift and go to state 9
+    SIN             shift and go to state 10
+    COS             shift and go to state 11
+    TAN             shift and go to state 12
+    NUMBER          shift and go to state 13
+    IDENTIFIER      shift and go to state 21
+
+    expression                     shift and go to state 27
+
+state 16
+
+    (6) expression -> expression MULT . expression
+    (4) expression -> . expression ADD expression
+    (5) expression -> . expression SUB expression
+    (6) expression -> . expression MULT expression
+    (7) expression -> . expression DIV expression
+    (8) expression -> . SUB expression
+    (9) expression -> . expression POW expression
+    (10) expression -> . EXP
+    (11) expression -> . PI
+    (12) expression -> . COMMENT
+    (13) expression -> . LPAREN expression RPAREN
+    (14) expression -> . SIN LPAREN expression RPAREN
+    (15) expression -> . COS LPAREN expression RPAREN
+    (16) expression -> . TAN LPAREN expression RPAREN
+    (17) expression -> . NUMBER
+    (18) expression -> . IDENTIFIER
+
+    SUB             shift and go to state 5
+    EXP             shift and go to state 6
+    PI              shift and go to state 7
+    COMMENT         shift and go to state 8
+    LPAREN          shift and go to state 9
+    SIN             shift and go to state 10
+    COS             shift and go to state 11
+    TAN             shift and go to state 12
+    NUMBER          shift and go to state 13
+    IDENTIFIER      shift and go to state 21
+
+    expression                     shift and go to state 28
+
+state 17
+
+    (7) expression -> expression DIV . expression
+    (4) expression -> . expression ADD expression
+    (5) expression -> . expression SUB expression
+    (6) expression -> . expression MULT expression
+    (7) expression -> . expression DIV expression
+    (8) expression -> . SUB expression
+    (9) expression -> . expression POW expression
+    (10) expression -> . EXP
+    (11) expression -> . PI
+    (12) expression -> . COMMENT
+    (13) expression -> . LPAREN expression RPAREN
+    (14) expression -> . SIN LPAREN expression RPAREN
+    (15) expression -> . COS LPAREN expression RPAREN
+    (16) expression -> . TAN LPAREN expression RPAREN
+    (17) expression -> . NUMBER
+    (18) expression -> . IDENTIFIER
+
+    SUB             shift and go to state 5
+    EXP             shift and go to state 6
+    PI              shift and go to state 7
+    COMMENT         shift and go to state 8
+    LPAREN          shift and go to state 9
+    SIN             shift and go to state 10
+    COS             shift and go to state 11
+    TAN             shift and go to state 12
+    NUMBER          shift and go to state 13
+    IDENTIFIER      shift and go to state 21
+
+    expression                     shift and go to state 29
+
+state 18
+
+    (9) expression -> expression POW . expression
+    (4) expression -> . expression ADD expression
+    (5) expression -> . expression SUB expression
+    (6) expression -> . expression MULT expression
+    (7) expression -> . expression DIV expression
+    (8) expression -> . SUB expression
+    (9) expression -> . expression POW expression
+    (10) expression -> . EXP
+    (11) expression -> . PI
+    (12) expression -> . COMMENT
+    (13) expression -> . LPAREN expression RPAREN
+    (14) expression -> . SIN LPAREN expression RPAREN
+    (15) expression -> . COS LPAREN expression RPAREN
+    (16) expression -> . TAN LPAREN expression RPAREN
+    (17) expression -> . NUMBER
+    (18) expression -> . IDENTIFIER
+
+    SUB             shift and go to state 5
+    EXP             shift and go to state 6
+    PI              shift and go to state 7
+    COMMENT         shift and go to state 8
+    LPAREN          shift and go to state 9
+    SIN             shift and go to state 10
+    COS             shift and go to state 11
+    TAN             shift and go to state 12
+    NUMBER          shift and go to state 13
+    IDENTIFIER      shift and go to state 21
+
+    expression                     shift and go to state 30
+
+state 19
+
+    (3) assignment -> IDENTIFIER EQUAL . expression
+    (4) expression -> . expression ADD expression
+    (5) expression -> . expression SUB expression
+    (6) expression -> . expression MULT expression
+    (7) expression -> . expression DIV expression
+    (8) expression -> . SUB expression
+    (9) expression -> . expression POW expression
+    (10) expression -> . EXP
+    (11) expression -> . PI
+    (12) expression -> . COMMENT
+    (13) expression -> . LPAREN expression RPAREN
+    (14) expression -> . SIN LPAREN expression RPAREN
+    (15) expression -> . COS LPAREN expression RPAREN
+    (16) expression -> . TAN LPAREN expression RPAREN
+    (17) expression -> . NUMBER
+    (18) expression -> . IDENTIFIER
+
+    SUB             shift and go to state 5
+    EXP             shift and go to state 6
+    PI              shift and go to state 7
+    COMMENT         shift and go to state 8
+    LPAREN          shift and go to state 9
+    SIN             shift and go to state 10
+    COS             shift and go to state 11
+    TAN             shift and go to state 12
+    NUMBER          shift and go to state 13
+    IDENTIFIER      shift and go to state 21
+
+    expression                     shift and go to state 31
+
+state 20
+
+    (8) expression -> SUB expression .
+    (4) expression -> expression . ADD expression
+    (5) expression -> expression . SUB expression
+    (6) expression -> expression . MULT expression
+    (7) expression -> expression . DIV expression
+    (9) expression -> expression . POW expression
+
+    ADD             reduce using rule 8 (expression -> SUB expression .)
+    SUB             reduce using rule 8 (expression -> SUB expression .)
+    MULT            reduce using rule 8 (expression -> SUB expression .)
+    DIV             reduce using rule 8 (expression -> SUB expression .)
+    $end            reduce using rule 8 (expression -> SUB expression .)
+    RPAREN          reduce using rule 8 (expression -> SUB expression .)
+    POW             shift and go to state 18
+
+  ! POW             [ reduce using rule 8 (expression -> SUB expression .) ]
+  ! ADD             [ shift and go to state 14 ]
+  ! SUB             [ shift and go to state 15 ]
+  ! MULT            [ shift and go to state 16 ]
+  ! DIV             [ shift and go to state 17 ]
+
+
+state 21
+
+    (18) expression -> IDENTIFIER .
+
+    ADD             reduce using rule 18 (expression -> IDENTIFIER .)
+    SUB             reduce using rule 18 (expression -> IDENTIFIER .)
+    MULT            reduce using rule 18 (expression -> IDENTIFIER .)
+    DIV             reduce using rule 18 (expression -> IDENTIFIER .)
+    POW             reduce using rule 18 (expression -> IDENTIFIER .)
+    $end            reduce using rule 18 (expression -> IDENTIFIER .)
+    RPAREN          reduce using rule 18 (expression -> IDENTIFIER .)
+
+
+state 22
+
+    (13) expression -> LPAREN expression . RPAREN
+    (4) expression -> expression . ADD expression
+    (5) expression -> expression . SUB expression
+    (6) expression -> expression . MULT expression
+    (7) expression -> expression . DIV expression
+    (9) expression -> expression . POW expression
+
+    RPAREN          shift and go to state 32
+    ADD             shift and go to state 14
+    SUB             shift and go to state 15
+    MULT            shift and go to state 16
+    DIV             shift and go to state 17
+    POW             shift and go to state 18
+
+
+state 23
+
+    (14) expression -> SIN LPAREN . expression RPAREN
+    (4) expression -> . expression ADD expression
+    (5) expression -> . expression SUB expression
+    (6) expression -> . expression MULT expression
+    (7) expression -> . expression DIV expression
+    (8) expression -> . SUB expression
+    (9) expression -> . expression POW expression
+    (10) expression -> . EXP
+    (11) expression -> . PI
+    (12) expression -> . COMMENT
+    (13) expression -> . LPAREN expression RPAREN
+    (14) expression -> . SIN LPAREN expression RPAREN
+    (15) expression -> . COS LPAREN expression RPAREN
+    (16) expression -> . TAN LPAREN expression RPAREN
+    (17) expression -> . NUMBER
+    (18) expression -> . IDENTIFIER
+
+    SUB             shift and go to state 5
+    EXP             shift and go to state 6
+    PI              shift and go to state 7
+    COMMENT         shift and go to state 8
+    LPAREN          shift and go to state 9
+    SIN             shift and go to state 10
+    COS             shift and go to state 11
+    TAN             shift and go to state 12
+    NUMBER          shift and go to state 13
+    IDENTIFIER      shift and go to state 21
+
+    expression                     shift and go to state 33
+
+state 24
+
+    (15) expression -> COS LPAREN . expression RPAREN
+    (4) expression -> . expression ADD expression
+    (5) expression -> . expression SUB expression
+    (6) expression -> . expression MULT expression
+    (7) expression -> . expression DIV expression
+    (8) expression -> . SUB expression
+    (9) expression -> . expression POW expression
+    (10) expression -> . EXP
+    (11) expression -> . PI
+    (12) expression -> . COMMENT
+    (13) expression -> . LPAREN expression RPAREN
+    (14) expression -> . SIN LPAREN expression RPAREN
+    (15) expression -> . COS LPAREN expression RPAREN
+    (16) expression -> . TAN LPAREN expression RPAREN
+    (17) expression -> . NUMBER
+    (18) expression -> . IDENTIFIER
+
+    SUB             shift and go to state 5
+    EXP             shift and go to state 6
+    PI              shift and go to state 7
+    COMMENT         shift and go to state 8
+    LPAREN          shift and go to state 9
+    SIN             shift and go to state 10
+    COS             shift and go to state 11
+    TAN             shift and go to state 12
+    NUMBER          shift and go to state 13
+    IDENTIFIER      shift and go to state 21
+
+    expression                     shift and go to state 34
+
+state 25
+
+    (16) expression -> TAN LPAREN . expression RPAREN
+    (4) expression -> . expression ADD expression
+    (5) expression -> . expression SUB expression
+    (6) expression -> . expression MULT expression
+    (7) expression -> . expression DIV expression
+    (8) expression -> . SUB expression
+    (9) expression -> . expression POW expression
+    (10) expression -> . EXP
+    (11) expression -> . PI
+    (12) expression -> . COMMENT
+    (13) expression -> . LPAREN expression RPAREN
+    (14) expression -> . SIN LPAREN expression RPAREN
+    (15) expression -> . COS LPAREN expression RPAREN
+    (16) expression -> . TAN LPAREN expression RPAREN
+    (17) expression -> . NUMBER
+    (18) expression -> . IDENTIFIER
+
+    SUB             shift and go to state 5
+    EXP             shift and go to state 6
+    PI              shift and go to state 7
+    COMMENT         shift and go to state 8
+    LPAREN          shift and go to state 9
+    SIN             shift and go to state 10
+    COS             shift and go to state 11
+    TAN             shift and go to state 12
+    NUMBER          shift and go to state 13
+    IDENTIFIER      shift and go to state 21
+
+    expression                     shift and go to state 35
+
+state 26
+
+    (4) expression -> expression ADD expression .
+    (4) expression -> expression . ADD expression
+    (5) expression -> expression . SUB expression
+    (6) expression -> expression . MULT expression
+    (7) expression -> expression . DIV expression
+    (9) expression -> expression . POW expression
+
+    ADD             reduce using rule 4 (expression -> expression ADD expression .)
+    SUB             reduce using rule 4 (expression -> expression ADD expression .)
+    $end            reduce using rule 4 (expression -> expression ADD expression .)
+    RPAREN          reduce using rule 4 (expression -> expression ADD expression .)
+    MULT            shift and go to state 16
+    DIV             shift and go to state 17
+    POW             shift and go to state 18
+
+  ! MULT            [ reduce using rule 4 (expression -> expression ADD expression .) ]
+  ! DIV             [ reduce using rule 4 (expression -> expression ADD expression .) ]
+  ! POW             [ reduce using rule 4 (expression -> expression ADD expression .) ]
+  ! ADD             [ shift and go to state 14 ]
+  ! SUB             [ shift and go to state 15 ]
+
+
+state 27
+
+    (5) expression -> expression SUB expression .
+    (4) expression -> expression . ADD expression
+    (5) expression -> expression . SUB expression
+    (6) expression -> expression . MULT expression
+    (7) expression -> expression . DIV expression
+    (9) expression -> expression . POW expression
+
+    ADD             reduce using rule 5 (expression -> expression SUB expression .)
+    SUB             reduce using rule 5 (expression -> expression SUB expression .)
+    $end            reduce using rule 5 (expression -> expression SUB expression .)
+    RPAREN          reduce using rule 5 (expression -> expression SUB expression .)
+    MULT            shift and go to state 16
+    DIV             shift and go to state 17
+    POW             shift and go to state 18
+
+  ! MULT            [ reduce using rule 5 (expression -> expression SUB expression .) ]
+  ! DIV             [ reduce using rule 5 (expression -> expression SUB expression .) ]
+  ! POW             [ reduce using rule 5 (expression -> expression SUB expression .) ]
+  ! ADD             [ shift and go to state 14 ]
+  ! SUB             [ shift and go to state 15 ]
+
+
+state 28
+
+    (6) expression -> expression MULT expression .
+    (4) expression -> expression . ADD expression
+    (5) expression -> expression . SUB expression
+    (6) expression -> expression . MULT expression
+    (7) expression -> expression . DIV expression
+    (9) expression -> expression . POW expression
+
+    ADD             reduce using rule 6 (expression -> expression MULT expression .)
+    SUB             reduce using rule 6 (expression -> expression MULT expression .)
+    MULT            reduce using rule 6 (expression -> expression MULT expression .)
+    DIV             reduce using rule 6 (expression -> expression MULT expression .)
+    $end            reduce using rule 6 (expression -> expression MULT expression .)
+    RPAREN          reduce using rule 6 (expression -> expression MULT expression .)
+    POW             shift and go to state 18
+
+  ! POW             [ reduce using rule 6 (expression -> expression MULT expression .) ]
+  ! ADD             [ shift and go to state 14 ]
+  ! SUB             [ shift and go to state 15 ]
+  ! MULT            [ shift and go to state 16 ]
+  ! DIV             [ shift and go to state 17 ]
+
+
+state 29
+
+    (7) expression -> expression DIV expression .
+    (4) expression -> expression . ADD expression
+    (5) expression -> expression . SUB expression
+    (6) expression -> expression . MULT expression
+    (7) expression -> expression . DIV expression
+    (9) expression -> expression . POW expression
+
+    ADD             reduce using rule 7 (expression -> expression DIV expression .)
+    SUB             reduce using rule 7 (expression -> expression DIV expression .)
+    MULT            reduce using rule 7 (expression -> expression DIV expression .)
+    DIV             reduce using rule 7 (expression -> expression DIV expression .)
+    $end            reduce using rule 7 (expression -> expression DIV expression .)
+    RPAREN          reduce using rule 7 (expression -> expression DIV expression .)
+    POW             shift and go to state 18
+
+  ! POW             [ reduce using rule 7 (expression -> expression DIV expression .) ]
+  ! ADD             [ shift and go to state 14 ]
+  ! SUB             [ shift and go to state 15 ]
+  ! MULT            [ shift and go to state 16 ]
+  ! DIV             [ shift and go to state 17 ]
+
+
+state 30
+
+    (9) expression -> expression POW expression .
+    (4) expression -> expression . ADD expression
+    (5) expression -> expression . SUB expression
+    (6) expression -> expression . MULT expression
+    (7) expression -> expression . DIV expression
+    (9) expression -> expression . POW expression
+
+    ADD             reduce using rule 9 (expression -> expression POW expression .)
+    SUB             reduce using rule 9 (expression -> expression POW expression .)
+    MULT            reduce using rule 9 (expression -> expression POW expression .)
+    DIV             reduce using rule 9 (expression -> expression POW expression .)
+    POW             reduce using rule 9 (expression -> expression POW expression .)
+    $end            reduce using rule 9 (expression -> expression POW expression .)
+    RPAREN          reduce using rule 9 (expression -> expression POW expression .)
+
+  ! ADD             [ shift and go to state 14 ]
+  ! SUB             [ shift and go to state 15 ]
+  ! MULT            [ shift and go to state 16 ]
+  ! DIV             [ shift and go to state 17 ]
+  ! POW             [ shift and go to state 18 ]
+
+
+state 31
+
+    (3) assignment -> IDENTIFIER EQUAL expression .
+    (4) expression -> expression . ADD expression
+    (5) expression -> expression . SUB expression
+    (6) expression -> expression . MULT expression
+    (7) expression -> expression . DIV expression
+    (9) expression -> expression . POW expression
+
+    $end            reduce using rule 3 (assignment -> IDENTIFIER EQUAL expression .)
+    ADD             shift and go to state 14
+    SUB             shift and go to state 15
+    MULT            shift and go to state 16
+    DIV             shift and go to state 17
+    POW             shift and go to state 18
+
+
+state 32
+
+    (13) expression -> LPAREN expression RPAREN .
+
+    ADD             reduce using rule 13 (expression -> LPAREN expression RPAREN .)
+    SUB             reduce using rule 13 (expression -> LPAREN expression RPAREN .)
+    MULT            reduce using rule 13 (expression -> LPAREN expression RPAREN .)
+    DIV             reduce using rule 13 (expression -> LPAREN expression RPAREN .)
+    POW             reduce using rule 13 (expression -> LPAREN expression RPAREN .)
+    $end            reduce using rule 13 (expression -> LPAREN expression RPAREN .)
+    RPAREN          reduce using rule 13 (expression -> LPAREN expression RPAREN .)
+
+
+state 33
+
+    (14) expression -> SIN LPAREN expression . RPAREN
+    (4) expression -> expression . ADD expression
+    (5) expression -> expression . SUB expression
+    (6) expression -> expression . MULT expression
+    (7) expression -> expression . DIV expression
+    (9) expression -> expression . POW expression
+
+    RPAREN          shift and go to state 36
+    ADD             shift and go to state 14
+    SUB             shift and go to state 15
+    MULT            shift and go to state 16
+    DIV             shift and go to state 17
+    POW             shift and go to state 18
+
+
+state 34
+
+    (15) expression -> COS LPAREN expression . RPAREN
+    (4) expression -> expression . ADD expression
+    (5) expression -> expression . SUB expression
+    (6) expression -> expression . MULT expression
+    (7) expression -> expression . DIV expression
+    (9) expression -> expression . POW expression
+
+    RPAREN          shift and go to state 37
+    ADD             shift and go to state 14
+    SUB             shift and go to state 15
+    MULT            shift and go to state 16
+    DIV             shift and go to state 17
+    POW             shift and go to state 18
+
+
+state 35
+
+    (16) expression -> TAN LPAREN expression . RPAREN
+    (4) expression -> expression . ADD expression
+    (5) expression -> expression . SUB expression
+    (6) expression -> expression . MULT expression
+    (7) expression -> expression . DIV expression
+    (9) expression -> expression . POW expression
+
+    RPAREN          shift and go to state 38
+    ADD             shift and go to state 14
+    SUB             shift and go to state 15
+    MULT            shift and go to state 16
+    DIV             shift and go to state 17
+    POW             shift and go to state 18
+
+
+state 36
+
+    (14) expression -> SIN LPAREN expression RPAREN .
+
+    ADD             reduce using rule 14 (expression -> SIN LPAREN expression RPAREN .)
+    SUB             reduce using rule 14 (expression -> SIN LPAREN expression RPAREN .)
+    MULT            reduce using rule 14 (expression -> SIN LPAREN expression RPAREN .)
+    DIV             reduce using rule 14 (expression -> SIN LPAREN expression RPAREN .)
+    POW             reduce using rule 14 (expression -> SIN LPAREN expression RPAREN .)
+    $end            reduce using rule 14 (expression -> SIN LPAREN expression RPAREN .)
+    RPAREN          reduce using rule 14 (expression -> SIN LPAREN expression RPAREN .)
+
+
+state 37
+
+    (15) expression -> COS LPAREN expression RPAREN .
+
+    ADD             reduce using rule 15 (expression -> COS LPAREN expression RPAREN .)
+    SUB             reduce using rule 15 (expression -> COS LPAREN expression RPAREN .)
+    MULT            reduce using rule 15 (expression -> COS LPAREN expression RPAREN .)
+    DIV             reduce using rule 15 (expression -> COS LPAREN expression RPAREN .)
+    POW             reduce using rule 15 (expression -> COS LPAREN expression RPAREN .)
+    $end            reduce using rule 15 (expression -> COS LPAREN expression RPAREN .)
+    RPAREN          reduce using rule 15 (expression -> COS LPAREN expression RPAREN .)
+
+
+state 38
+
+    (16) expression -> TAN LPAREN expression RPAREN .
+
+    ADD             reduce using rule 16 (expression -> TAN LPAREN expression RPAREN .)
+    SUB             reduce using rule 16 (expression -> TAN LPAREN expression RPAREN .)
+    MULT            reduce using rule 16 (expression -> TAN LPAREN expression RPAREN .)
+    DIV             reduce using rule 16 (expression -> TAN LPAREN expression RPAREN .)
+    POW             reduce using rule 16 (expression -> TAN LPAREN expression RPAREN .)
+    $end            reduce using rule 16 (expression -> TAN LPAREN expression RPAREN .)
+    RPAREN          reduce using rule 16 (expression -> TAN LPAREN expression RPAREN .)
+
